@@ -40,7 +40,8 @@ public class FlowerBucketTest {
         FlowerPack flowerPackTwo = new FlowerPack(flowerTwo, quantity);
         flowerBucket.addFlowerPack(flowerPackTwo);
         priceTest += flowerTwo.getPrice() * quantity;
-        Assertions.assertEquals(flowerTwo.getFlowerType(), FlowerType.CHAMOMILE);
+        Assertions.assertEquals(flowerTwo.getFlowerType(),
+                                 FlowerType.CHAMOMILE);
         Assertions.assertEquals(priceTest, flowerBucket.getPrice());
 
         Flower flowerThree = new Flower();

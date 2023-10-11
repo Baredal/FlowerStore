@@ -7,9 +7,9 @@ public class FlowerPack {
     private Flower flower;
     private int quantity;
 
-    public FlowerPack(Flower flower, Integer quantity) {
+    public FlowerPack(Flower flower, int quantity) {
         this.flower = new Flower(flower);
-        this.quantity = (quantity != null) ? quantity : 1;
+        setQuantity(quantity);
     }
 
     public void setQuantity(int quantity) {
