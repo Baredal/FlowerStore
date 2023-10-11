@@ -14,11 +14,12 @@ public class FlowerTest {
     private static final int MAX_PRICE = 100;
     private Flower flower;
     private FlowerPack flowerPack;
+    private int defaultQuantity = 1;
 
     @BeforeEach
     public void init() {
         flower = new Flower();
-        flowerPack = new FlowerPack(flower, 5);
+        flowerPack = new FlowerPack(flower, defaultQuantity);
     }
 
     @Test
@@ -30,7 +31,7 @@ public class FlowerTest {
     }
 
     @Test
-    public void testColor() {
+    public void testColorRed() {
         FlowerColor color = FlowerColor.RED;
         flower.setColor(color);
         Assertions.assertEquals("#FF0000", flower.getColor());
@@ -38,14 +39,14 @@ public class FlowerTest {
 
 
     @Test
-    public void testColor1() {
+    public void testColorGreen() {
         FlowerColor color = FlowerColor.GREEN;
         flower.setColor(color);
         Assertions.assertEquals("#00FF00", flower.getColor());
     }
 
     @Test
-    public void testColor2() {
+    public void testColorWhite() {
         FlowerColor color = FlowerColor.WHITE;
         flower.setColor(color);
         Assertions.assertEquals("#FFFFFF", flower.getColor());
@@ -53,14 +54,19 @@ public class FlowerTest {
 
     @Test
     public void testFlowerPack() {
-        Assertions.assertEquals(5, flowerPack.getQuantity());
-        Assertions.assertTrue(flowerPack.getFlower() instanceof Flower);
         int price = RANDOM_GENERATOR.nextInt(MAX_PRICE);
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
+
+        Assertions.assertEquals(defaultQuantity, flowerPack.getQuantity());
+        Assertions.assertTrue(flowerPack.getFlower() instanceof Flower);
+        double priceTest = quantity * flower.getPrice();
+        Assertions.assertEquals(priceTest, flowerPack.getPrice());
+
+
         flower.setPrice(price);
         flowerPack = new FlowerPack(flower, quantity);
-        double test_price = quantity * flower.getPrice();
-        Assertions.assertEquals(test_price, flowerPack.getPrice());
+        priceTest = quantity * flower.getPrice();
+        Assertions.assertEquals(priceTest, flowerPack.getPrice());
 
     }
 }

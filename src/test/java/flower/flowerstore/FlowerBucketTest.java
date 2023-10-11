@@ -26,30 +26,30 @@ public class FlowerBucketTest {
 
         double priceTest = price * quantity;
         
-        Flower flower1 = new Flower();
-        flower1.setFlowerType(FlowerType.ROSE);
-        flower1.setPrice(price);
-        FlowerPack flowerPack1 = new FlowerPack(flower1, quantity);
-        flowerBucket.addFlowerPack(flowerPack1);
-        Assertions.assertEquals(flower1.getFlowerType(), FlowerType.ROSE);
+        Flower flowerOne = new Flower();
+        flowerOne.setFlowerType(FlowerType.ROSE);
+        flowerOne.setPrice(price);
+        FlowerPack flowerPackOne = new FlowerPack(flowerOne, quantity);
+        flowerBucket.addFlowerPack(flowerPackOne);
+        Assertions.assertEquals(flowerOne.getFlowerType(), FlowerType.ROSE);
         Assertions.assertEquals(priceTest, flowerBucket.getPrice());
 
-        Flower flower2 = new Flower();
-        flower2.setFlowerType(FlowerType.CHAMOMILE);
-        flower2.setPrice(price);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, quantity);
-        flowerBucket.addFlowerPack(flowerPack2);
-        priceTest += flower2.getPrice() * quantity;
-        Assertions.assertEquals(flower2.getFlowerType(), FlowerType.CHAMOMILE);
+        Flower flowerTwo = new Flower();
+        flowerTwo.setFlowerType(FlowerType.CHAMOMILE);
+        flowerTwo.setPrice(price);
+        FlowerPack flowerPackTwo = new FlowerPack(flowerTwo, quantity);
+        flowerBucket.addFlowerPack(flowerPackTwo);
+        priceTest += flowerTwo.getPrice() * quantity;
+        Assertions.assertEquals(flowerTwo.getFlowerType(), FlowerType.CHAMOMILE);
         Assertions.assertEquals(priceTest, flowerBucket.getPrice());
 
-        Flower flower3 = new Flower();
-        flower3.setFlowerType(FlowerType.TULIP);
-        flower3.setPrice(price);
-        FlowerPack flowerPack3 = new FlowerPack(flower3, quantity);
-        flowerBucket.addFlowerPack(flowerPack3);
-        priceTest += flower3.getPrice() * quantity;
-        Assertions.assertEquals(flower3.getFlowerType(), FlowerType.TULIP);
+        Flower flowerThree = new Flower();
+        flowerThree.setFlowerType(FlowerType.TULIP);
+        flowerThree.setPrice(price);
+        FlowerPack flowerPackThree = new FlowerPack(flowerThree, quantity);
+        flowerBucket.addFlowerPack(flowerPackThree);
+        priceTest += flowerThree.getPrice() * quantity;
+        Assertions.assertEquals(flowerThree.getFlowerType(), FlowerType.TULIP);
         Assertions.assertEquals(priceTest, flowerBucket.getPrice());
     }
 }
