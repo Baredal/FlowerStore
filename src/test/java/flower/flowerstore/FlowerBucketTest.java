@@ -3,10 +3,6 @@ package flower.flowerstore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import flower.flowerstore.Flower;
-import flower.flowerstore.FlowerBucket;
-import flower.flowerstore.FlowerPack;
-
 import org.junit.jupiter.api.Assertions;
 
 import java.util.Random;
@@ -27,10 +23,33 @@ public class FlowerBucketTest {
     public void testPrice() {
         int price = RANDOM_GENERATOR.nextInt(MAX_PRICE);
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        Flower flower = new Rose();
-        flower.setPrice(10);
-        FlowerPack flowerPack = new FlowerPack(flower, quantity);
-        flowerBucket.add(flowerPack);
-        Assertions.assertEquals(price * quantity, flowerBucket.getPrice());
+
+        double priceTest = price * quantity;
+        
+        Flower flower1 = new Flower();
+        flower1.setFlowerType(FlowerType.ROSE);
+        flower1.setPrice(price);
+        FlowerPack flowerPack1 = new FlowerPack(flower1, quantity);
+        flowerBucket.addFlowerPack(flowerPack1);
+        Assertions.assertEquals(flower1.getFlowerType(), FlowerType.ROSE);
+        Assertions.assertEquals(priceTest, flowerBucket.getPrice());
+
+        Flower flower2 = new Flower();
+        flower2.setFlowerType(FlowerType.CHAMOMILE);
+        flower2.setPrice(price);
+        FlowerPack flowerPack2 = new FlowerPack(flower2, quantity);
+        flowerBucket.addFlowerPack(flowerPack2);
+        priceTest += flower2.getPrice() * quantity;
+        Assertions.assertEquals(flower2.getFlowerType(), FlowerType.CHAMOMILE);
+        Assertions.assertEquals(priceTest, flowerBucket.getPrice());
+
+        Flower flower3 = new Flower();
+        flower3.setFlowerType(FlowerType.TULIP);
+        flower3.setPrice(price);
+        FlowerPack flowerPack3 = new FlowerPack(flower3, quantity);
+        flowerBucket.addFlowerPack(flowerPack3);
+        priceTest += flower3.getPrice() * quantity;
+        Assertions.assertEquals(flower3.getFlowerType(), FlowerType.TULIP);
+        Assertions.assertEquals(priceTest, flowerBucket.getPrice());
     }
 }
