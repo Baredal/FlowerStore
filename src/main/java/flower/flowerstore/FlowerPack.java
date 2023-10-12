@@ -14,12 +14,12 @@ public class FlowerPack {
         setQuantity(1);
     }
 
-    public void setQuantity(int quantity) {
-        if (quantity < 1) {
+    public void setQuantity(int newQuantity) {
+        if (newQuantity < 1) {
             this.quantity = 1;
         }
         else {
-            this.quantity = quantity;
+            this.quantity = newQuantity;
         }
     }
     public double getPrice() {
