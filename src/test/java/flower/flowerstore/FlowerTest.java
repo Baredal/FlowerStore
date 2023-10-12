@@ -19,7 +19,7 @@ public class FlowerTest {
     @BeforeEach
     public void init() {
         flower = new Flower();
-        flowerPack = new FlowerPack(flower, defaultQuantity);
+        flowerPack = new FlowerPack(flower);
     }
 
     @Test
@@ -64,7 +64,8 @@ public class FlowerTest {
 
 
         flower.setPrice(price);
-        flowerPack = new FlowerPack(flower, quantity);
+        flowerPack.setFlower(flower);
+        flowerPack.setQuantity(quantity);
         priceTest = quantity * flower.getPrice();
         Assertions.assertEquals(priceTest, flowerPack.getPrice());
 

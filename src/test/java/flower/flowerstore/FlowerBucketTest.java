@@ -29,7 +29,8 @@ public class FlowerBucketTest {
         Flower flowerOne = new Flower();
         flowerOne.setFlowerType(FlowerType.ROSE);
         flowerOne.setPrice(price);
-        FlowerPack flowerPackOne = new FlowerPack(flowerOne, quantity);
+        FlowerPack flowerPackOne = new FlowerPack(flowerOne);
+        flowerPackOne.setQuantity(quantity);
         flowerBucket.addFlowerPack(flowerPackOne);
         Assertions.assertEquals(flowerOne.getFlowerType(), FlowerType.ROSE);
         Assertions.assertEquals(priceTest, flowerBucket.getPrice());
@@ -37,7 +38,8 @@ public class FlowerBucketTest {
         Flower flowerTwo = new Flower();
         flowerTwo.setFlowerType(FlowerType.CHAMOMILE);
         flowerTwo.setPrice(price);
-        FlowerPack flowerPackTwo = new FlowerPack(flowerTwo, quantity);
+        FlowerPack flowerPackTwo = new FlowerPack(flowerTwo);
+        flowerPackTwo.setQuantity(quantity);
         flowerBucket.addFlowerPack(flowerPackTwo);
         priceTest += flowerTwo.getPrice() * quantity;
         Assertions.assertEquals(flowerTwo.getFlowerType(),
@@ -47,7 +49,8 @@ public class FlowerBucketTest {
         Flower flowerThree = new Flower();
         flowerThree.setFlowerType(FlowerType.TULIP);
         flowerThree.setPrice(price);
-        FlowerPack flowerPackThree = new FlowerPack(flowerThree, quantity);
+        FlowerPack flowerPackThree = new FlowerPack(flowerThree);
+        flowerPackThree.setQuantity(quantity);
         flowerBucket.addFlowerPack(flowerPackThree);
         priceTest += flowerThree.getPrice() * quantity;
         Assertions.assertEquals(flowerThree.getFlowerType(), FlowerType.TULIP);
