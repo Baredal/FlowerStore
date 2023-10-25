@@ -1,10 +1,11 @@
-package flower.flowerstore;
+package ucu.edu.ua.apps.flowers.flowerstore;
+
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Assertions;
-
 import java.util.Random;
 
 public class FlowerBucketTest {

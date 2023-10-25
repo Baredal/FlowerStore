@@ -1,12 +1,15 @@
-package flower.flowerstore;
+package ucu.edu.ua.apps.flowers.flowerstore;
 
+
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter @Setter @NoArgsConstructor @ToString
-public class Flower {
+@Getter @Setter @NoArgsConstructor @ToString @AllArgsConstructor
+public class Flower extends Item{
     private FlowerType flowerType;
     private double price;
     private double sepalLength;
@@ -21,6 +24,11 @@ public class Flower {
 
     public String getColor() {
         return color.toString();
+    }
+
+    @Override
+    public String getDescription() {
+        return "This is a flower";
     }
 
 }

@@ -1,10 +1,11 @@
-package flower.flowerstore;
+package ucu.edu.ua.apps.flowers.flowerstore;
+
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-public class FlowerPack {
+public class FlowerPack extends Item {
     @Setter
     private Flower flower;
     private int quantity;
@@ -22,7 +23,16 @@ public class FlowerPack {
             this.quantity = newQuantity;
         }
     }
+
+    @Override
     public double getPrice() {
         return flower.getPrice() * quantity;
     }
+
+    @Override
+    public String getDescription() {
+        return "This is a banch of flowers (pack)";
+    }
+
+    
 }
