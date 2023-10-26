@@ -10,9 +10,7 @@ public class FlowerTypeFilter implements SearchFilter {
 
     @Override
     public boolean match(Flower flower) {
-        if (flower.getFlowerType().equals(flowerTypeCheck)) {
-            return true;
-        }
-        return false;
+        return flower.getFlowerType().equals(flowerTypeCheck);
+
     }
 }

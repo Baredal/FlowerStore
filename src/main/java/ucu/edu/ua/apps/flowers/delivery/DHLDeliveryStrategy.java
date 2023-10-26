@@ -8,7 +8,7 @@ public class DHLDeliveryStrategy implements Delivery {
 
     @Override
     public String deliver(List<Item> items) {
-        return "The Items should be delivered by DHL (to implement)";
+        return "The Items should be delivered by DHL";
     }
     
 }

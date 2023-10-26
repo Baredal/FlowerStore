@@ -10,12 +10,12 @@ public class BasketDecorator extends ItemDecorator {
 
     @Override
     public double getPrice() {
-        return 40 + super.getPrice();
+        return 4 + super.getPrice();
     }
 
     @Override
     public String getDescription() {
-        return "Additional pay costs 40 for ribbon decorator";
+        return "Additional pay costs 4 for ribbon decorator";
     }
     
 }

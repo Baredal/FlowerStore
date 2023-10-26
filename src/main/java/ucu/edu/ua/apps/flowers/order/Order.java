@@ -3,8 +3,6 @@ package ucu.edu.ua.apps.flowers.order;
 import java.util.LinkedList;
 import java.util.List;
 
-import java.util.Iterator;
-
 import lombok.Getter;
 import ucu.edu.ua.apps.flowers.delivery.Delivery;
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
@@ -29,19 +27,12 @@ public class Order {
     }
 
     public double calculateTotalPrice() {
-        double totalPrice = 0;
-        Iterator<Item> cur = items.iterator();
-        while (cur.hasNext()) {
-            Item item = cur.next();
-            totalPrice += item.getPrice();
-        }
-        return totalPrice;
+        return items.stream().mapToDouble(Item::getPrice).sum();
     }
 
     // TODO implement future logic here
     public String processOrder() {
-        double totalPrice = this.calculateTotalPrice();
-        paymentStrategy.pay(totalPrice);
+        paymentStrategy.pay(calculateTotalPrice());
         deliveryStrategy.deliver(items);
         return "Your order has been processed successfully (or not)";
     }
@@ -54,5 +45,4 @@ public class Order {
         items.remove(item);
     }
 
-    
 }

@@ -10,9 +10,7 @@ public class SepalLenghtFilter implements SearchFilter {
 
     @Override
     public boolean match(Flower flower) {
-        if (flower.getSepalLength() == sepalLengthCheck) {
-            return true;
-        }
-        return false;
+        return flower.getSepalLength() == sepalLengthCheck;
+
     }
 }

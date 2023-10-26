@@ -8,9 +8,7 @@ public class PriceFilter implements SearchFilter {
     private double priceCheck;
     
     public boolean match(Flower flower) {
-        if (flower.getPrice() == priceCheck) {
-            return true;
-        }
-        return false;
+        return flower.getPrice() == priceCheck;
+
     }
 }

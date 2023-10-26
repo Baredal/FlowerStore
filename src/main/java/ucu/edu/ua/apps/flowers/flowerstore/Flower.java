@@ -28,7 +28,7 @@ public class Flower extends Item{
 
     @Override
     public String getDescription() {
-        return "This is a flower";
+        return String.format("This is a %s", getFlowerType());
     }
 
 }
