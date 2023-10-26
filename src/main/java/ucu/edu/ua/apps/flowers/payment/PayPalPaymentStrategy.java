@@ -1,5 +1,6 @@
 package ucu.edu.ua.apps.flowers.payment;
 
+
 public class PayPalPaymentStrategy implements Payment{
     // TODO for future cases
     private String email;
