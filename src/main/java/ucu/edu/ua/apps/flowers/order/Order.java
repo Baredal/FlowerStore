@@ -4,26 +4,25 @@ import java.util.LinkedList;
 import java.util.List;
 
 import lombok.Getter;
+import lombok.Setter;
 import ucu.edu.ua.apps.flowers.delivery.Delivery;
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 import ucu.edu.ua.apps.flowers.payment.Payment;
 
-@Getter
+
 public class Order {
     private List<Item> items;
+    @Getter @Setter
     private Payment paymentStrategy;
+    @Getter @Setter
     private Delivery deliveryStrategy;
 
     public Order() {
         items = new LinkedList<>();
     }
 
-    public void setPaymentStrategy(Payment paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
-    }
-
-    public void setDeliveryStrategy(Delivery deliveryStrategy) {
-        this.deliveryStrategy = deliveryStrategy;
+    public int getSize() {
+        return items.size();
     }
 
     public double calculateTotalPrice() {
@@ -34,7 +33,9 @@ public class Order {
     public String processOrder() {
         paymentStrategy.pay(calculateTotalPrice());
         deliveryStrategy.deliver(items);
-        return "Your order has been processed successfully (or not)";
+        return "Your order has been processed successfully (or not) with " + items.toString() + " " +
+                getPaymentStrategy().getClass().getSimpleName() + " " +
+                getDeliveryStrategy().getClass().getSimpleName();
     }
 
     public void addItem(Item item) {

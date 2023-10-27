@@ -52,8 +52,8 @@ public class StoreFiltersTest {
 
         flowerThree.setFlowerType(FlowerType.TULIP);
         flowerThree.setColor(FlowerColor.RED);
-        flowerThree.setPrice(8);
-        flowerThree.setSepalLength(0.3);
+        flowerThree.setPrice(20);
+        flowerThree.setSepalLength(0.8);
 
         flowerFour.setFlowerType(FlowerType.TULIP);
         flowerFour.setColor(FlowerColor.WHITE);
@@ -67,8 +67,8 @@ public class StoreFiltersTest {
 
         flowerSix.setFlowerType(FlowerType.CHAMOMILE);
         flowerSix.setColor(FlowerColor.RED);
-        flowerSix.setPrice(18);
-        flowerSix.setSepalLength(0.7);
+        flowerSix.setPrice(20);
+        flowerSix.setSepalLength(0.8);
 
         testList.add(flowerOne);
         testList.add(flowerTwo);
@@ -81,7 +81,7 @@ public class StoreFiltersTest {
     }
 
     @Test
-    public void testSearch() {
+    public void testSearch() { // check all aplied filters and returns flowers that matches for them (can be different filters parametres of same type)
         List<SearchFilter> listFilters = new ArrayList<>();
         store.setFlowers(testList);
         Assertions.assertEquals(store.search(listFilters), testList);
@@ -99,6 +99,17 @@ public class StoreFiltersTest {
         listFilters.add(sepalLenghtFilter);
 
         Assertions.assertEquals(store.search(listFilters).size(), 2);
+
+        ColorFilter colorFilterTwo = new ColorFilter("#FF0000"); // REd
+
+        listFilters.add(colorFilterTwo);
+
+        Assertions.assertEquals(store.search(listFilters).size(), 4);
+
+        listFilters.add(flowerTypeFilter);
+
+        Assertions.assertEquals(store.search(listFilters).size(), 1);
+
 
         // RED("#FF0000"), GREEN("#00FF00"), WHITE("#FFFFFF");
 

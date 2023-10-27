@@ -6,8 +6,9 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-@Getter @NoArgsConstructor
+@Getter @NoArgsConstructor @ToString
 public class FlowerBucket extends Item{
     private List<FlowerPack> flowerPacks = new ArrayList<>();
 
@@ -29,4 +30,5 @@ public class FlowerBucket extends Item{
     public void addFlowerPack(FlowerPack flowerPack) {
         flowerPacks.add(flowerPack);
     }
+
 }
