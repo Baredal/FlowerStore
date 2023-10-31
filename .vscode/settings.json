@@ -1,3 +1,15 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "flowerstore",
+            "database": "flowers",
+            "username": "postgres"
+        }
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
