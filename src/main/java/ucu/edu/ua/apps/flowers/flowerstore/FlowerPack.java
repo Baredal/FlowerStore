@@ -3,11 +3,13 @@ package ucu.edu.ua.apps.flowers.flowerstore;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter @NoArgsConstructor @ToString
 public class FlowerPack extends Item {
 
+    @Setter
     private Flower flower;
     private int quantity;
 
