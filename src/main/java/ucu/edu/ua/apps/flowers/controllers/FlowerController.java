@@ -11,7 +11,7 @@ import ucu.edu.ua.apps.flowers.flowerstore.Flower;
 import ucu.edu.ua.apps.flowers.service.FlowerService;
 
 @RestController
-@RequestMapping("/api/flowers")
+@RequestMapping("/api/flower")
 public class FlowerController {
     private  FlowerService flowerService;
 
@@ -19,10 +19,8 @@ public class FlowerController {
     @Autowired
     public FlowerController(FlowerService flowerService) {
         this.flowerService = flowerService;
+
     }
-
-
-
     @GetMapping("/list")
     public List<Flower> getFlowers() {
         return flowerService.getFlowers();
