@@ -5,10 +5,11 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 5432,
+            "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "flowerstore",
             "database": "flowers",
-            "username": "postgres"
+            "username": "postgres",
+            "name": "flowerstore"
         }
     ],
     "java.configuration.updateBuildConfiguration": "interactive"

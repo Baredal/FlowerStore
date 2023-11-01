@@ -16,7 +16,7 @@ public class RibbonDecoratorTest {
     
     @BeforeEach
     public void init() {
-        Item flower = new Flower(FlowerType.TULIP, 55, 0.9, FlowerColor.GREEN);
+        Item flower = new Flower(1, FlowerType.TULIP, 55, 0.9, FlowerColor.GREEN);
         ribbonDecorator = new RibbonDecorator(flower);
     }
     

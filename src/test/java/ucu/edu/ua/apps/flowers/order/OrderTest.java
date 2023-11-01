@@ -25,7 +25,7 @@ public class OrderTest {
     @BeforeEach
     public void init() {
         order = new Order();
-        flowerOne = new Flower(FlowerType.CHAMOMILE, 20, 0.5, FlowerColor.WHITE);
+        flowerOne = new Flower(1, FlowerType.CHAMOMILE, 20, 0.5, FlowerColor.WHITE);
         flowerPack = new FlowerPack((Flower) flowerOne);
         ((FlowerPack) flowerPack).setQuantity(3);
         flowerBucket = new FlowerBucket();

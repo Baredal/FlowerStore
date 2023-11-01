@@ -17,7 +17,7 @@ public class BasketDecoratorTest {
     
     @BeforeEach
     public void init() {
-        Item flower = new Flower(FlowerType.ROSE, 12, 0.5, FlowerColor.RED);
+        Item flower = new Flower(1, FlowerType.ROSE, 12, 0.5, FlowerColor.RED);
         basketDecorator = new BasketDecorator(flower);
     }
     

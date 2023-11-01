@@ -14,7 +14,7 @@ public class PaperDecoratorTest {
     
     @BeforeEach
     public void init() {
-        Item flower = new Flower(FlowerType.CHAMOMILE, 20, 0.7, FlowerColor.WHITE);
+        Item flower = new Flower(1, FlowerType.CHAMOMILE, 20, 0.7, FlowerColor.WHITE);
         paperDecorator = new PaperDecorator(flower);
     }
     
