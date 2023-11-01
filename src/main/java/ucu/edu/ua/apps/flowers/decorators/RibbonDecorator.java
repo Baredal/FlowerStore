@@ -2,7 +2,7 @@ package ucu.edu.ua.apps.flowers.decorators;
 
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
-public class RibbonDecorator extends ItemDecorator{
+public class RibbonDecorator extends AbstractDecorator{
 
     public RibbonDecorator(Item item) {
         super(item);
