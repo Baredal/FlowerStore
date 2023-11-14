@@ -21,18 +21,17 @@ public class OrderTest {
     private Item flowerOne;
     private Item flowerPack;
     private Order order;
-    private int testPriceOne = 20;
-    private int testTotalPrice = 100;
-    private int testQuantity = 3;
-    
+    private static final int TEST_PRICE_ONE = 20;
+    private static final int TEST_TOTAL_PRICE = 100;
+    private static final int TEST_QUANTITY = 3;
 
     @BeforeEach
     public void init() {
         order = new Order();
         flowerOne = new Flower(1, FlowerType.CHAMOMILE,
-        testPriceOne, 0.5, FlowerColor.WHITE);
+        TEST_PRICE_ONE, 0.5, FlowerColor.WHITE);
         flowerPack = new FlowerPack((Flower) flowerOne);
-        ((FlowerPack) flowerPack).setQuantity(testQuantity);
+        ((FlowerPack) flowerPack).setQuantity(TEST_QUANTITY);
         flowerBucket = new FlowerBucket();
         ((FlowerBucket) flowerBucket).addFlowerPack((FlowerPack) flowerPack);
         flowerBucket = new RibbonDecorator(flowerBucket);
@@ -42,7 +41,7 @@ public class OrderTest {
 
     @Test
     public void testCalculateTotalPrice() {
-        Assertions.assertEquals(testTotalPrice, order.calculateTotalPrice());
+        Assertions.assertEquals(TEST_TOTAL_PRICE, order.calculateTotalPrice());
     }
 
     @Test

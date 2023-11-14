@@ -12,18 +12,20 @@ import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
 import org.junit.jupiter.api.Assertions;
 public class BasketDecoratorTest {
-    private int testPrice = 12;
+    private static final int TEST_PRICE = 12;
+    private static final int TEST_TOTAL_PRICE = 16;
     private BasketDecorator basketDecorator;
     
     @BeforeEach
     public void init() {
-        Item flower = new Flower(1, FlowerType.ROSE, testPrice, 0.5, FlowerColor.RED);
+        Item flower = new Flower(1, FlowerType.ROSE, 
+        TEST_PRICE, 0.5, FlowerColor.RED);
         basketDecorator = new BasketDecorator(flower);
     }
     
     @Test
     public void testPrice() {
-        Assertions.assertEquals(16, basketDecorator.getPrice());
+        Assertions.assertEquals(TEST_TOTAL_PRICE, basketDecorator.getPrice());
     }
 
     @Test

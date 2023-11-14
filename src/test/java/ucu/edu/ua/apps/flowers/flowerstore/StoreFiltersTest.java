@@ -29,13 +29,13 @@ public class StoreFiltersTest {
     private Flower flowerSix;
     private List<Flower> testList;
 
-    private int testPriceOne = 20;
-    private double testSepalLengthOne = 0.8;
-    private int testPriceTwo = 7;
-    private double testSepalLengthTwo = 0.6;
+    private static final int TEST_PRICE_ONE = 20;
+    private static final double TEST_SEPAL_LENGTH_ONE = 0.8;
+    private static final int TEST_PRICE_TWO = 7;
+    private static final double TEST_SEPAL_LENGTH_TWO = 0.6;
 
-    private int totalQuantityOne = 3;
-    private int totalQuantityTwo = 4;
+    private static final int TOTAL_QUANTITY_ONE = 3;
+    private static final int TOTAL_QUANTITY_TWO = 4;
 
 
 
@@ -52,33 +52,33 @@ public class StoreFiltersTest {
 
         flowerOne.setFlowerType(FlowerType.CHAMOMILE);
         flowerOne.setColor(FlowerColor.WHITE);
-        flowerOne.setPrice(testPriceOne);
-        flowerOne.setSepalLength(testSepalLengthOne);
+        flowerOne.setPrice(TEST_PRICE_ONE);
+        flowerOne.setSepalLength(TEST_SEPAL_LENGTH_ONE);
 
         flowerTwo.setFlowerType(FlowerType.CHAMOMILE);
         flowerTwo.setColor(FlowerColor.GREEN);
-        flowerTwo.setPrice(testPriceTwo);
+        flowerTwo.setPrice(TEST_PRICE_TWO);
         flowerTwo.setSepalLength(0.5);
 
         flowerThree.setFlowerType(FlowerType.TULIP);
         flowerThree.setColor(FlowerColor.RED);
-        flowerThree.setPrice(testPriceOne);
-        flowerThree.setSepalLength(testSepalLengthOne);
+        flowerThree.setPrice(TEST_PRICE_ONE);
+        flowerThree.setSepalLength(TEST_SEPAL_LENGTH_ONE);
 
         flowerFour.setFlowerType(FlowerType.TULIP);
         flowerFour.setColor(FlowerColor.WHITE);
-        flowerFour.setPrice(testPriceOne);
-        flowerFour.setSepalLength(testSepalLengthTwo);
+        flowerFour.setPrice(TEST_PRICE_ONE);
+        flowerFour.setSepalLength(TEST_SEPAL_LENGTH_TWO);
 
         flowerFive.setFlowerType(FlowerType.ROSE);
         flowerFive.setColor(FlowerColor.WHITE);
-        flowerFive.setPrice(testPriceOne);
-        flowerFive.setSepalLength(testSepalLengthOne);
+        flowerFive.setPrice(TEST_PRICE_ONE);
+        flowerFive.setSepalLength(TEST_SEPAL_LENGTH_ONE);
 
         flowerSix.setFlowerType(FlowerType.CHAMOMILE);
         flowerSix.setColor(FlowerColor.RED);
-        flowerSix.setPrice(testPriceOne);
-        flowerSix.setSepalLength(testSepalLengthOne);
+        flowerSix.setPrice(TEST_PRICE_ONE);
+        flowerSix.setSepalLength(TEST_SEPAL_LENGTH_ONE);
 
         testList.add(flowerOne);
         testList.add(flowerTwo);
@@ -98,14 +98,15 @@ public class StoreFiltersTest {
         Assertions.assertEquals(store.search(listFilters), testList);
 
         colorFilter = new ColorFilter("#FFFFFF"); // White
-        priceFilter = new PriceFilter(testPriceOne);
-        sepalLenghtFilter = new SepalLenghtFilter(testSepalLengthOne);
+        priceFilter = new PriceFilter(TEST_PRICE_ONE);
+        sepalLenghtFilter = new SepalLenghtFilter(TEST_SEPAL_LENGTH_ONE);
         flowerTypeFilter = new FlowerTypeFilter(FlowerType.TULIP);
 
         listFilters.add(colorFilter);
         listFilters.add(priceFilter);
         
-        Assertions.assertEquals(store.search(listFilters).size(), totalQuantityOne);
+        Assertions.assertEquals(store.search(listFilters).size(),
+        TOTAL_QUANTITY_ONE);
 
         listFilters.add(sepalLenghtFilter);
 
@@ -115,7 +116,8 @@ public class StoreFiltersTest {
 
         listFilters.add(colorFilterTwo);
 
-        Assertions.assertEquals(store.search(listFilters).size(), totalQuantityTwo);
+        Assertions.assertEquals(store.search(listFilters).size(),
+        TOTAL_QUANTITY_TWO);
 
         listFilters.add(flowerTypeFilter);
 

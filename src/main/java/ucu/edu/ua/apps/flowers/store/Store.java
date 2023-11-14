@@ -52,7 +52,8 @@ public class Store {
             }
         
             for (SearchFilter filter : filters) {
-                if (filter instanceof ColorFilter && filter.match(flower)) {
+                if (filter instanceof ColorFilter 
+                && filter.match(flower)) {
                     colorMatch = true;
                 } else if (filter instanceof SepalLenghtFilter 
                             && filter.match(flower)) {

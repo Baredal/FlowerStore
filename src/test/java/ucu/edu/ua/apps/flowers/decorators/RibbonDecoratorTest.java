@@ -11,21 +11,21 @@ import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
 
 public class RibbonDecoratorTest {
-    private int testPrice = 55;
-    private double testSepalLength = 0.9;
-    private int totalPrice = 95;
+    private static final int TEST_PRICE = 55;
+    private static final double TEST_SEPAL_LENGTH = 0.9;
+    private static final int TOTAL_PRICE = 95;
     private RibbonDecorator ribbonDecorator;
 
     @BeforeEach
     public void init() {
         Item flower = new Flower(1, FlowerType.TULIP,
-         testPrice, testSepalLength, FlowerColor.GREEN);
+         TEST_PRICE, TEST_SEPAL_LENGTH, FlowerColor.GREEN);
         ribbonDecorator = new RibbonDecorator(flower);
     }
     
     @Test
     public void testPrice() {
-        Assertions.assertEquals(totalPrice, ribbonDecorator.getPrice());
+        Assertions.assertEquals(TOTAL_PRICE, ribbonDecorator.getPrice());
     }
 
     @Test

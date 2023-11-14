@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class CreditCardPaymentStrategyTest {
     private CreditCardPaymentStrategy creditCard;
-    private int testPrice = 15;
+    private static final int TEST_PRICE = 15;
 
     @BeforeEach
     public void init() {
@@ -17,6 +17,6 @@ public class CreditCardPaymentStrategyTest {
     public void testPay() {
         Assertions.assertEquals(
         "paying with credit card. The price is 15,00 hryvnias",
-         creditCard.pay(testPrice));
+         creditCard.pay(TEST_PRICE));
     }
 }

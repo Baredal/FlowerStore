@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class PayPalPaymentStrategyTest {
     private PayPalPaymentStrategy payPal;
-    private int testPrice = 22;
+    private static final int TEST_PRICE = 22;
 
     @BeforeEach
     public void init() {
@@ -17,6 +17,6 @@ public class PayPalPaymentStrategyTest {
     public void testPay() {
         Assertions.assertEquals(
         "paying with PayPal. The price is 22,00 hryvnias",
-        payPal.pay(testPrice));
+        payPal.pay(TEST_PRICE));
     }
 }
