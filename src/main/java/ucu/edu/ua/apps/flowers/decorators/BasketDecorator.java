@@ -3,6 +3,7 @@ package ucu.edu.ua.apps.flowers.decorators;
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
 public class BasketDecorator extends AbstractDecorator {
+    private int additionalPrice = 4;
 
     public BasketDecorator(Item item) {
         super(item);
@@ -10,7 +11,7 @@ public class BasketDecorator extends AbstractDecorator {
 
     @Override
     public double getPrice() {
-        return 4 + super.getPrice();
+        return additionalPrice + super.getPrice();
     }
 
     @Override

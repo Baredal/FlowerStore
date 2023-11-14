@@ -5,17 +5,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CreditCardPaymentStrategyTest {
-    double price;
-    CreditCardPaymentStrategy creditCard;
+    private CreditCardPaymentStrategy creditCard;
+    private int testPrice = 15;
 
     @BeforeEach
     public void init() {
-        price = 15;
         creditCard = new CreditCardPaymentStrategy();
     }
 
     @Test
     public void testPay() {
-        Assertions.assertEquals("paying with credit card. The price is 15,00 hryvnias", creditCard.pay(price));
+        Assertions.assertEquals(
+        "paying with credit card. The price is 15,00 hryvnias",
+         creditCard.pay(testPrice));
     }
 }

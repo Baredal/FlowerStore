@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Getter @NoArgsConstructor @ToString
-public class FlowerBucket extends Item{
+public class FlowerBucket extends Item {
     private List<FlowerPack> flowerPacks = new ArrayList<>();
 
 

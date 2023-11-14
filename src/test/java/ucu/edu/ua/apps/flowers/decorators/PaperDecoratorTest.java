@@ -11,20 +11,26 @@ import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
 public class PaperDecoratorTest {
     private PaperDecorator paperDecorator;
+    private int testPrice = 20;
+    private double testSepalLength = 0.7;
+    private int totalPrice = 33;
     
     @BeforeEach
     public void init() {
-        Item flower = new Flower(1, FlowerType.CHAMOMILE, 20, 0.7, FlowerColor.WHITE);
+        Item flower = new Flower(1, FlowerType.CHAMOMILE,
+         testPrice, testSepalLength, FlowerColor.WHITE);
         paperDecorator = new PaperDecorator(flower);
     }
     
     @Test
     public void testPrice() {
-        Assertions.assertEquals(33, paperDecorator.getPrice());
+        Assertions.assertEquals(totalPrice, paperDecorator.getPrice());
     }
 
     @Test
     public void testGetDescription() {
-        Assertions.assertEquals("Addition pay costs 13 for paper decorator", paperDecorator.getDescription());
+        Assertions.assertEquals(
+        "Addition pay costs 13 for paper decorator",
+         paperDecorator.getDescription());
     }
 }

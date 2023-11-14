@@ -54,17 +54,22 @@ public class Store {
             for (SearchFilter filter : filters) {
                 if (filter instanceof ColorFilter && filter.match(flower)) {
                     colorMatch = true;
-                } else if (filter instanceof SepalLenghtFilter && filter.match(flower)) {
+                } else if (filter instanceof SepalLenghtFilter 
+                            && filter.match(flower)) {
                     sepalLenghtMatch = true;
-                } else if (filter instanceof PriceFilter && filter.match(flower)) {
+                } else if (filter instanceof PriceFilter 
+                            && filter.match(flower)) {
                     priceMatch = true;
-                } else if (filter instanceof FlowerTypeFilter && filter.match(flower)) {
+                } else if (filter instanceof FlowerTypeFilter
+                             && filter.match(flower)) {
                     flowerTypeMatch = true;
                 }
             }
             
-            if ((colorMatch == null || colorMatch) && (sepalLenghtMatch == null || sepalLenghtMatch)
-             && (priceMatch == null || priceMatch) && (flowerTypeMatch == null || flowerTypeMatch)) {
+            if ((colorMatch == null || colorMatch)
+                && (sepalLenghtMatch == null || sepalLenghtMatch)
+                && (priceMatch == null || priceMatch) &&
+              (flowerTypeMatch == null || flowerTypeMatch)) {
                 foundItems.add(flower);
             }
         }

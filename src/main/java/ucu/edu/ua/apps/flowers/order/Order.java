@@ -33,9 +33,12 @@ public class Order {
     public String processOrder() {
         paymentStrategy.pay(calculateTotalPrice());
         deliveryStrategy.deliver(items);
-        return "Your order has been processed successfully (or not) with " + items.toString() + " " +
-                getPaymentStrategy().getClass().getSimpleName() + " " +
-                getDeliveryStrategy().getClass().getSimpleName();
+        return "Your order has been processed successfully (or not) with " 
+                + items.toString() 
+                + " " 
+                + getPaymentStrategy().getClass().getSimpleName() 
+                + " " 
+                + getDeliveryStrategy().getClass().getSimpleName();
     }
 
     public void addItem(Item item) {

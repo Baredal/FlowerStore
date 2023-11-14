@@ -21,13 +21,18 @@ public class OrderTest {
     private Item flowerOne;
     private Item flowerPack;
     private Order order;
+    private int testPriceOne = 20;
+    private int testTotalPrice = 100;
+    private int testQuantity = 3;
+    
 
     @BeforeEach
     public void init() {
         order = new Order();
-        flowerOne = new Flower(1, FlowerType.CHAMOMILE, 20, 0.5, FlowerColor.WHITE);
+        flowerOne = new Flower(1, FlowerType.CHAMOMILE,
+        testPriceOne, 0.5, FlowerColor.WHITE);
         flowerPack = new FlowerPack((Flower) flowerOne);
-        ((FlowerPack) flowerPack).setQuantity(3);
+        ((FlowerPack) flowerPack).setQuantity(testQuantity);
         flowerBucket = new FlowerBucket();
         ((FlowerBucket) flowerBucket).addFlowerPack((FlowerPack) flowerPack);
         flowerBucket = new RibbonDecorator(flowerBucket);
@@ -37,31 +42,35 @@ public class OrderTest {
 
     @Test
     public void testCalculateTotalPrice() {
-        Assertions.assertEquals(100, order.calculateTotalPrice());
+        Assertions.assertEquals(testTotalPrice, order.calculateTotalPrice());
     }
 
     @Test
     public void testSetPaymentPayPal() {
         order.setPaymentStrategy(new PayPalPaymentStrategy());
-        Assertions.assertInstanceOf(PayPalPaymentStrategy.class, order.getPaymentStrategy());
+        Assertions.assertInstanceOf(PayPalPaymentStrategy.class,
+        order.getPaymentStrategy());
     }
 
     @Test
     public void testSetPaymentCreditCard() {
         order.setPaymentStrategy(new CreditCardPaymentStrategy());
-        Assertions.assertInstanceOf(CreditCardPaymentStrategy.class, order.getPaymentStrategy());
+        Assertions.assertInstanceOf(CreditCardPaymentStrategy.class,
+        order.getPaymentStrategy());
     }
 
     @Test
     public void testSetDeliveryPost() {
         order.setDeliveryStrategy(new PostDeliveryStrategy());
-        Assertions.assertInstanceOf(PostDeliveryStrategy.class, order.getDeliveryStrategy());
+        Assertions.assertInstanceOf(PostDeliveryStrategy.class,
+        order.getDeliveryStrategy());
     }
 
     @Test
     public void testSetDeliveryDhl() {
         order.setDeliveryStrategy(new DHLDeliveryStrategy());
-        Assertions.assertInstanceOf(DHLDeliveryStrategy.class, order.getDeliveryStrategy());
+        Assertions.assertInstanceOf(DHLDeliveryStrategy.class,
+        order.getDeliveryStrategy());
     }
 
 

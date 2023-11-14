@@ -15,10 +15,10 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 
 public class StoreFiltersTest {
-    private ColorFilter colorFilter;
-    private PriceFilter priceFilter;
     private FlowerTypeFilter flowerTypeFilter;
+    private PriceFilter priceFilter;
     private SepalLenghtFilter sepalLenghtFilter;
+    private ColorFilter colorFilter;
 
     private Store store;
     private Flower flowerOne;
@@ -27,7 +27,17 @@ public class StoreFiltersTest {
     private Flower flowerFour;
     private Flower flowerFive;
     private Flower flowerSix;
-    List<Flower> testList;
+    private List<Flower> testList;
+
+    private int testPriceOne = 20;
+    private double testSepalLengthOne = 0.8;
+    private int testPriceTwo = 7;
+    private double testSepalLengthTwo = 0.6;
+
+    private int totalQuantityOne = 3;
+    private int totalQuantityTwo = 4;
+
+
 
     @BeforeEach
     public void init() {
@@ -42,33 +52,33 @@ public class StoreFiltersTest {
 
         flowerOne.setFlowerType(FlowerType.CHAMOMILE);
         flowerOne.setColor(FlowerColor.WHITE);
-        flowerOne.setPrice(20);
-        flowerOne.setSepalLength(0.8);
+        flowerOne.setPrice(testPriceOne);
+        flowerOne.setSepalLength(testSepalLengthOne);
 
         flowerTwo.setFlowerType(FlowerType.CHAMOMILE);
         flowerTwo.setColor(FlowerColor.GREEN);
-        flowerTwo.setPrice(7);
+        flowerTwo.setPrice(testPriceTwo);
         flowerTwo.setSepalLength(0.5);
 
         flowerThree.setFlowerType(FlowerType.TULIP);
         flowerThree.setColor(FlowerColor.RED);
-        flowerThree.setPrice(20);
-        flowerThree.setSepalLength(0.8);
+        flowerThree.setPrice(testPriceOne);
+        flowerThree.setSepalLength(testSepalLengthOne);
 
         flowerFour.setFlowerType(FlowerType.TULIP);
         flowerFour.setColor(FlowerColor.WHITE);
-        flowerFour.setPrice(20);
-        flowerFour.setSepalLength(0.6);
+        flowerFour.setPrice(testPriceOne);
+        flowerFour.setSepalLength(testSepalLengthTwo);
 
         flowerFive.setFlowerType(FlowerType.ROSE);
         flowerFive.setColor(FlowerColor.WHITE);
-        flowerFive.setPrice(20);
-        flowerFive.setSepalLength(0.8);
+        flowerFive.setPrice(testPriceOne);
+        flowerFive.setSepalLength(testSepalLengthOne);
 
         flowerSix.setFlowerType(FlowerType.CHAMOMILE);
         flowerSix.setColor(FlowerColor.RED);
-        flowerSix.setPrice(20);
-        flowerSix.setSepalLength(0.8);
+        flowerSix.setPrice(testPriceOne);
+        flowerSix.setSepalLength(testSepalLengthOne);
 
         testList.add(flowerOne);
         testList.add(flowerTwo);
@@ -79,22 +89,23 @@ public class StoreFiltersTest {
 
         store = new Store();
     }
-
+    // check all aplied filters and returns flowers 
+    // that matches for them (can be different filters parametres of same type)
     @Test
-    public void testSearch() { // check all aplied filters and returns flowers that matches for them (can be different filters parametres of same type)
+    public void testSearch() {
         List<SearchFilter> listFilters = new ArrayList<>();
         store.setFlowers(testList);
         Assertions.assertEquals(store.search(listFilters), testList);
 
         colorFilter = new ColorFilter("#FFFFFF"); // White
-        priceFilter = new PriceFilter(20);
-        sepalLenghtFilter = new SepalLenghtFilter(0.8);
+        priceFilter = new PriceFilter(testPriceOne);
+        sepalLenghtFilter = new SepalLenghtFilter(testSepalLengthOne);
         flowerTypeFilter = new FlowerTypeFilter(FlowerType.TULIP);
 
         listFilters.add(colorFilter);
         listFilters.add(priceFilter);
         
-        Assertions.assertEquals(store.search(listFilters).size(), 3);
+        Assertions.assertEquals(store.search(listFilters).size(), totalQuantityOne);
 
         listFilters.add(sepalLenghtFilter);
 
@@ -104,7 +115,7 @@ public class StoreFiltersTest {
 
         listFilters.add(colorFilterTwo);
 
-        Assertions.assertEquals(store.search(listFilters).size(), 4);
+        Assertions.assertEquals(store.search(listFilters).size(), totalQuantityTwo);
 
         listFilters.add(flowerTypeFilter);
 

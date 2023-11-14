@@ -2,7 +2,7 @@ package ucu.edu.ua.apps.flowers.decorators;
 
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
-public abstract class AbstractDecorator extends Item{
+public abstract class AbstractDecorator extends Item {
     private Item item;
     public AbstractDecorator(Item item) {
         this.item = item;

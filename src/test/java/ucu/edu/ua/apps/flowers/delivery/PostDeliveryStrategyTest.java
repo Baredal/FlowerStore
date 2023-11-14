@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 
 public class PostDeliveryStrategyTest {
-    PostDeliveryStrategy postDelivery;
+    private PostDeliveryStrategy postDelivery;
 
     @BeforeEach
     public void init() {
@@ -19,7 +19,9 @@ public class PostDeliveryStrategyTest {
     
     @Test
     public void testGetDescription() {
-        Assertions.assertEquals("The Items should be delivered by post", postDelivery.deliver(new LinkedList<>()));
+        Assertions.assertEquals(
+        "The Items should be delivered by post",
+         postDelivery.deliver(new LinkedList<>()));
 
     }
 }

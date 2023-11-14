@@ -18,16 +18,22 @@ import ucu.edu.ua.apps.flowers.payment.PayPalPaymentStrategy;
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
+    private int priceOne = 20;
+    private int priceTwo = 25;
+    private int quantityOne = 2;
+    private int quantityTwo = 3;
 
     @GetMapping("/processing")
     public String proccesOrder() {
-        Flower flowerOne = new Flower(FlowerType.CHAMOMILE, 20, 0.5, FlowerColor.WHITE);
-        Flower flowerTwo = new Flower(FlowerType.TULIP, 25, 0.5, FlowerColor.RED);
+        Flower flowerOne = new Flower(1, FlowerType.CHAMOMILE, 
+            priceOne, 0.5, FlowerColor.WHITE);
+        Flower flowerTwo = new Flower(1, FlowerType.TULIP,
+             priceTwo, 0.5, FlowerColor.RED);
         Order order = new Order();
         FlowerPack flowerPackOne = new FlowerPack(flowerOne);
-        flowerPackOne.setQuantity(2);
+        flowerPackOne.setQuantity(quantityOne);
         FlowerPack flowerPackTwo = new FlowerPack(flowerTwo);
-        flowerPackTwo.setQuantity(3);
+        flowerPackTwo.setQuantity(quantityTwo);
         FlowerBucket flowerBucket = new FlowerBucket();
         flowerBucket.addFlowerPack(flowerPackOne);
         flowerBucket.addFlowerPack(flowerPackTwo);

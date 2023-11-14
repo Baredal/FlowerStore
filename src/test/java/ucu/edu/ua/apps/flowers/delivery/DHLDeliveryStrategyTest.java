@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class DHLDeliveryStrategyTest {
-    DHLDeliveryStrategy dhlDeliver;
+    private DHLDeliveryStrategy dhlDeliver;
 
     @BeforeEach
     public void init() {
@@ -16,7 +16,9 @@ public class DHLDeliveryStrategyTest {
     
     @Test
     public void testGetDescription() {
-        Assertions.assertEquals("The Items should be delivered by DHL", dhlDeliver.deliver(new LinkedList<>()));
+        Assertions.assertEquals(
+            "The Items should be delivered by DHL",
+             dhlDeliver.deliver(new LinkedList<>()));
 
     }
 }

@@ -12,7 +12,7 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @ToString @AllArgsConstructor
 @Entity
-public class Flower extends Item{
+public class Flower extends Item {
     @Id
     private int id;
     private FlowerType flowerType;

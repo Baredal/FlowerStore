@@ -2,14 +2,16 @@ package ucu.edu.ua.apps.flowers.decorators;
 
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
-public class PaperDecorator extends AbstractDecorator{
+public class PaperDecorator extends AbstractDecorator {
+    private int additionalPrice = 13;
+    
     public PaperDecorator(Item item) {
         super(item);
     }
     
     @Override
     public double getPrice() {
-        return 13 + super.getPrice();
+        return additionalPrice + super.getPrice();
     }
 
     public String getDescription() {

@@ -6,7 +6,7 @@ import ucu.edu.ua.apps.flowers.flowerstore.FlowerType;
 
 @AllArgsConstructor
 public class FlowerTypeFilter implements SearchFilter {
-    public FlowerType flowerTypeCheck;
+    private FlowerType flowerTypeCheck;
 
     @Override
     public boolean match(Flower flower) {
