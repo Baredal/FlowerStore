@@ -5,8 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CreditCardPaymentStrategyTest {
-    private CreditCardPaymentStrategy creditCard;
     private static final int TEST_PRICE = 15;
+    private CreditCardPaymentStrategy creditCard;
+
 
     @BeforeEach
     public void init() {

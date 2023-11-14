@@ -10,10 +10,11 @@ import ucu.edu.ua.apps.flowers.flowerstore.FlowerType;
 import ucu.edu.ua.apps.flowers.flowerstore.Item;
 
 public class PaperDecoratorTest {
-    private PaperDecorator paperDecorator;
     private static final int TEST_PRICE = 20;
     private static final double TEST_SEPAL_LENGTH = 0.7;
     private static final int TOTAL_PRICE = 33;
+    private PaperDecorator paperDecorator;
+
     
     @BeforeEach
     public void init() {

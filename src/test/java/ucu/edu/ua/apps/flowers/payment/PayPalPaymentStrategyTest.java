@@ -5,8 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PayPalPaymentStrategyTest {
-    private PayPalPaymentStrategy payPal;
     private static final int TEST_PRICE = 22;
+    private PayPalPaymentStrategy payPal;
+
 
     @BeforeEach
     public void init() {

@@ -17,13 +17,14 @@ import ucu.edu.ua.apps.flowers.payment.CreditCardPaymentStrategy;
 import ucu.edu.ua.apps.flowers.payment.PayPalPaymentStrategy;
 
 public class OrderTest {
+    private static final int TEST_PRICE_ONE = 20;
+    private static final int TEST_TOTAL_PRICE = 100;
+    private static final int TEST_QUANTITY = 3;
     private Item flowerBucket;
     private Item flowerOne;
     private Item flowerPack;
     private Order order;
-    private static final int TEST_PRICE_ONE = 20;
-    private static final int TEST_TOTAL_PRICE = 100;
-    private static final int TEST_QUANTITY = 3;
+
 
     @BeforeEach
     public void init() {

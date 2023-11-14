@@ -15,6 +15,14 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 
 public class StoreFiltersTest {
+    private static final int TEST_PRICE_ONE = 20;
+    private static final double TEST_SEPAL_LENGTH_ONE = 0.8;
+    private static final int TEST_PRICE_TWO = 7;
+    private static final double TEST_SEPAL_LENGTH_TWO = 0.6;
+
+    private static final int TOTAL_QUANTITY_ONE = 3;
+    private static final int TOTAL_QUANTITY_TWO = 4;
+
     private FlowerTypeFilter flowerTypeFilter;
     private PriceFilter priceFilter;
     private SepalLenghtFilter sepalLenghtFilter;
@@ -28,15 +36,6 @@ public class StoreFiltersTest {
     private Flower flowerFive;
     private Flower flowerSix;
     private List<Flower> testList;
-
-    private static final int TEST_PRICE_ONE = 20;
-    private static final double TEST_SEPAL_LENGTH_ONE = 0.8;
-    private static final int TEST_PRICE_TWO = 7;
-    private static final double TEST_SEPAL_LENGTH_TWO = 0.6;
-
-    private static final int TOTAL_QUANTITY_ONE = 3;
-    private static final int TOTAL_QUANTITY_TWO = 4;
-
 
 
     @BeforeEach
