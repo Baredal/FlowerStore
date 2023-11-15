@@ -1,4 +1,4 @@
-package ucu.edu.ua.apps.flowers.service;
+package ucu.edu.ua.apps.flowers.flowerserive;
 
 import java.util.List;
 
