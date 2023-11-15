@@ -1,0 +1,11 @@
+GET https://beatifulflowers-838c34e12083.herokuapp.com/api/user/list
+
+###
+POST https://beatifulflowers-838c34e12083.herokuapp.com/api/user/add
+Content-Type: application/json
+
+{
+  "id": 1,
+  "email": "AOAOAOVasya@gmail.com",
+  "age": 25
+}
